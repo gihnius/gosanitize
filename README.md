@@ -1,6 +1,7 @@
 Gosanitize is a whitelist-based HTML sanitizer. Given a list of acceptable elements and attributes, Sanitize will remove all unacceptable HTML from a string.
 
 inspired by https://github.com/mjibson/goread/tree/master/sanitizer
+found a better impl: https://github.com/microcosm-cc/bluemonday
 
 
 ## usage
@@ -71,3 +72,4 @@ go test
 ```
 
 ## License
+MIT
