@@ -51,7 +51,7 @@ func Test_Sanitize_StripTags(t *testing.T) {
 		},
 		T{
 			`<<p>paragraphs</p>`,
-			`&lt;&lt;p&gt;paragraphs`,
+			`&lt;paragraphs`,
 		},
 	}
 	s := NewStrip()
@@ -193,11 +193,11 @@ func Test_Sanitize_TagsPairs(t *testing.T) {
 	tt := []T{
 		T{ // the html pkg not take here as a correct start tag
 			`<<p>Why SO?</p>`,
-			`&lt;&lt;p&gt;Why SO?</p>`,
+			`&lt;<p>Why SO?</p>`,
 		},
 		T{ // all escape here
 			`<<<<<<pre>Why Why<<<</pre>`,
-			`&lt;&lt;&lt;&lt;&lt;&lt;pre&gt;Why Why&lt;&lt;&lt;&lt;/pre&gt;`,
+			`&lt;&lt;&lt;&lt;&lt;<pre>Why Why&lt;&lt;&lt;</pre>`,
 		},
 		T{ // why here is ok
 			`<pre>so what</pre>>>>>>`,
